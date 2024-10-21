@@ -1,0 +1,36 @@
+.Footer {
+    width: 1440px;
+    height: 454px;
+    background-color: #1F1F1F ;
+    color: #FFFFFF;
+    font-size: normal;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+img{
+    width: 253px;
+    height: 44px;
+    top: 72px;
+    left: 104px;
+    gap: 0px;
+    opacity: 0px;
+}
+
+.p{
+    width: 1440px;
+    height: 454px;
+    gap: 0px;
+    opacity: 0px;
+}
+
+.RedesSociais{
+    width: 124.12px;
+    height: 20.53px;
+    top: 269px;
+    left: 100px;
+    gap: 0px;
+    opacity: 0px;
+
+}
