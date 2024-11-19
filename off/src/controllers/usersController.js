@@ -1,30 +1,31 @@
 const usersModel = require('../models/usersModel');
 const bcrypt = require('bcrypt');
 
-
 const createNewUser = async (req, res) => {
     // CONSTANTES DE ENTRADA DE DADOS
     const { nome, sobrenome, email, senha } = req.body;
-    // CRIPTOGRAFIA DA SENHA ENVIADA NO BODY
-    const saltRounds = 10
-    const senhaHast = await bcrypt.hash(senha, saltRounds)
 
     try {
+        // CRIPTOGRAFIA DA SENHA ENVIADA NO BODY
+        const saltRounds = 10;
+        const senhaHast = await bcrypt.hash(senha, saltRounds);
+
         // CRIANDO UM NOVO USUÁRIO
         const newUser = await usersModel.create({
-            first_name: nome,
+            firstname: nome,  // Altere para 'firstname'
             surname: sobrenome,
             email: email,
             password: senhaHast
-        })
-        // RESPOSTA DA REQUISIÇÃO
-        res.status(201).send({
-            message: `🟢 Usuário ${newUser.first_name}, ID: ${newUser.id} criado com sucesso!`
         });
-    } catch {
+
+        // RESPOSTA DA REQUISIÇÃO
+        return res.status(201).send({
+            message: `🟢 Usuário ${newUser.firstname}, ID: ${newUser.id} criado com sucesso!`
+        });
+    } catch (error) {
         // CAPTURA DE ERROS PARA O LADO DO SERVIDOR
-        res.send({
-            message: `❌ Algo de errado aconteceu ao deletar o usuário. Erro: ${error}`
+        return res.status(500).send({
+            message: `❌ Algo de errado aconteceu ao criar o usuário. Erro: ${error.message}`
         });
     }
 };
@@ -32,66 +33,70 @@ const createNewUser = async (req, res) => {
 const getAllUsers = async (req, res) => {
     try {
         const users = await usersModel.findAll();
-        res.send(users);
-
+        return res.send(users);
     } catch (error) {
-        res.send({
-            message: `❌ Erro ao listar os usuários! Erro: ${error}`
+        return res.status(500).send({
+            message: `❌ Erro ao listar os usuários! Erro: ${error.message}`
         });
-    };
+    }
 };
 
 const updateUserById = async (req, res) => {
-    const id = parseInt(req.params.id)
-    const user = await usersModel.findByPk(id);
-    // const {nome, sobrenome, email, senha} = req.body; //Passo 1: Linha de código necessária para o passo 2 funcionar.
-    try {
-        if (user) {
-            await usersModel.update(
-                // { //passo 2: Esse bloco de código é uma outra forma de você receber os dados da requisição
-                //     name: nome,
-                //     surname: sobrenome,
-                //     email: email,
-                //     password: senha
-                // },
-                { ...req.body },
-                { where: { id: id } }
-            );
+    const id = parseInt(req.params.id);
+    const { nome, sobrenome, email, senha } = req.body;
 
-            res.status(200).send({
-                message: `🟢 Usuário de ID: ${id} alterado com sucesso! 😁👍`
+    try {
+        const user = await usersModel.findByPk(id);
+        if (!user) {
+            return res.status(404).send({
+                message: `❌ Usuário ID: ${id} não encontrado.`
             });
         }
-    } catch (error) {
-        res.send({
-            message: `❌ Algo de errado aconteceu ao atualizar o usuário. Erro: ${error}`
+
+        await usersModel.update(
+            {
+                firstname: nome,
+                surname: sobrenome,
+                email: email,
+                password: senha
+            },
+            { where: { id: id } }
+        );
+        return res.status(200).send({
+            message: `🟢 Usuário ID: ${id} atualizado com sucesso!`
         });
-    };
+    } catch (error) {
+        return res.status(500).send({
+            message: `❌ Algo de errado aconteceu ao atualizar o usuário. Erro: ${error.message}`
+        });
+    }
 };
 
 const deleteUserById = async (req, res) => {
     const id = parseInt(req.params.id);
-    const user = await usersModel.findByPk(id);
+
     try {
-        if (user) {
-            await usersModel.destroy({
-                where: { id: id }
-            });
-            res.status(200).send({
-                message: `🟢 Usuário de ID: ${id} foi deletado com sucesso! 😁👍`
+        const user = await usersModel.findByPk(id);
+        if (!user) {
+            return res.status(404).send({
+                message: `❌ Usuário ID: ${id} não encontrado.`
             });
         }
-    } catch (error) {
-        res.send({
-            message: `❌ Algo de errado aconteceu ao deletar o usuário. Erro: ${error}`
-        });
-    };
-};
 
+        await usersModel.destroy({ where: { id: id } });
+        return res.status(200).send({
+            message: `🟢 Usuário ID: ${id} deletado com sucesso!`
+        });
+    } catch (error) {
+        return res.status(500).send({
+            message: `❌ Algo de errado aconteceu ao deletar o usuário. Erro: ${error.message}`
+        });
+    }
+};
 
 module.exports = {
     createNewUser,
     getAllUsers,
     updateUserById,
     deleteUserById
-}
+};
