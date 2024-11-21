@@ -2,28 +2,23 @@ const usersModel = require('../models/usersModel');
 const bcrypt = require('bcrypt');
 
 const createNewUser = async (req, res) => {
-    // CONSTANTES DE ENTRADA DE DADOS
     const { nome, sobrenome, email, senha } = req.body;
 
     try {
-        // CRIPTOGRAFIA DA SENHA ENVIADA NO BODY
         const saltRounds = 10;
         const senhaHast = await bcrypt.hash(senha, saltRounds);
 
-        // CRIANDO UM NOVO USUÁRIO
         const newUser = await usersModel.create({
-            firstname: nome,  // Altere para 'firstname'
+            firstname: nome,
             surname: sobrenome,
             email: email,
             password: senhaHast
         });
 
-        // RESPOSTA DA REQUISIÇÃO
         return res.status(201).send({
             message: `🟢 Usuário ${newUser.firstname}, ID: ${newUser.id} criado com sucesso!`
         });
     } catch (error) {
-        // CAPTURA DE ERROS PARA O LADO DO SERVIDOR
         return res.status(500).send({
             message: `❌ Algo de errado aconteceu ao criar o usuário. Erro: ${error.message}`
         });

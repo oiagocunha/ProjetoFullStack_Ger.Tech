@@ -20,24 +20,15 @@ const ProductOptionModel = connection.define('productOption', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    shape: {
-        type: DataTypes.ENUM('square', 'circle'),
-        defaultValue: 'square',
-    },
-    radius: {
-        type: DataTypes.INTEGER,
-        defaultValue: 0,
-    },
-    type: {
-        type: DataTypes.ENUM('text', 'color'),
-        defaultValue: 'text',
-    },
-    values: {
+    value: {
         type: DataTypes.STRING,
         allowNull: false,
     },
 }, {
     timestamps: true,
 });
+
+ProductModel.hasMany(ProductOptionModel, { foreignKey: 'product_id' });
+ProductOptionModel.belongsTo(ProductModel, { foreignKey: 'product_id' });
 
 module.exports = ProductOptionModel;
