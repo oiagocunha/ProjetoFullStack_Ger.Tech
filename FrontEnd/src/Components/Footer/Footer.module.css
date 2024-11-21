@@ -1,0 +1,161 @@
+/* Define os estilos para o elemento rodapé */
+footer {
+    width: 100%;
+    /* Define a largura para 100% */
+    overflow: hidden;
+    /* Garante que não haja transbordamento */
+}
+
+/* Define os estilos para a seção de navegação */
+.navegacao {
+    display: flex;
+    /* Usa layout flexível */
+    width: 100%;
+    /* Define a largura para 100% */
+    height: auto;
+    /* Define a altura como automática */
+    flex-direction: row;
+    /* Exibe colunas lado a lado */
+    align-items: flex-start;
+    /* Alinha os itens ao topo */
+    justify-content: space-around;
+    /* Distribui os itens uniformemente */
+    background-color: #1D1D1D;
+    /* Define a cor de fundo */
+    color: #FFFFFF;
+    /* Define a cor do texto */
+    padding: 40px 5px;
+    /* Adiciona preenchimento */
+    gap: 40px;
+    /* Adiciona espaço entre os itens */
+    flex-wrap: wrap;
+    /* Permite que os itens quebrem para a próxima linha */
+    box-sizing: border-box;
+    /* Inclui preenchimento e borda no cálculo da largura */
+}
+
+/* Define os estilos para o elemento imagem */
+img {
+    width: 253px;
+    /* Define a largura */
+    height: 44px;
+    /* Define a altura */
+    opacity: 1;
+    /* Define a opacidade */
+}
+
+/* Define os estilos para o elemento parágrafo */
+.p {
+    max-width: 260px;
+    /* Define a largura máxima */
+    font-family: 'Inter', sans-serif;
+    /* Define a família da fonte */
+    font-size: 16px;
+    /* Define o tamanho da fonte */
+    font-weight: 400;
+    /* Define o peso da fonte */
+    line-height: 26px;
+    /* Define a altura da linha */
+    text-align: left;
+    /* Alinha o texto à esquerda */
+}
+
+/* Define os estilos para a seção de redes sociais */
+.RedesSociais {
+    display: flex;
+    /* Usa layout flexível */
+    gap: 15px;
+    /* Adiciona espaço entre os itens */
+    align-items: center;
+    /* Alinha os itens ao centro */
+}
+
+/* Define os estilos para as imagens dentro da seção de redes sociais */
+.RedesSociais img {
+    width: 16px;
+    /* Define a largura */
+    height: 20px;
+    /* Define a altura */
+}
+
+/* Define os estilos para as seções de informação, categorias e contato */
+.Informacao,
+.Categorias,
+.Contato {
+    display: flex;
+    /* Usa layout flexível */
+    flex-direction: column;
+    /* Exibe os itens em coluna */
+    gap: 10px;
+    /* Adiciona espaço entre os itens */
+    font-family: 'Inter', sans-serif;
+    /* Define a família da fonte */
+    align-items: baseline;
+    /* Alinha os itens de texto um abaixo do outro */
+}
+
+/* Define os estilos para os elementos de título */
+.titulo {
+    font-size: 18px;
+    /* Define o tamanho da fonte */
+    font-weight: 600;
+    /* Define o peso da fonte */
+    line-height: 21.78px;
+    /* Define a altura da linha */
+    margin-bottom: 10px;
+    /* Adiciona margem abaixo do título */
+}
+
+/* Define os estilos para os links dentro das seções de informação, categorias e contato */
+.Informacao a,
+.Categorias a,
+.Contato a {
+    font-size: 16px;
+    /* Define o tamanho da fonte */
+    font-weight: 400;
+    /* Define o peso da fonte */
+    line-height: 26px;
+    /* Define a altura da linha */
+    color: #FFFFFF;
+    /* Define a cor do texto */
+    text-decoration: none;
+    /* Remove a decoração do texto */
+}
+
+/* Define os estilos para o elemento de endereço */
+.adress {
+    font-size: 14px;
+    /* Define o tamanho da fonte */
+    line-height: 1.5;
+    /* Define a altura da linha */
+    text-align: left;
+    /* Alinha o texto à esquerda */
+    word-wrap: break-word;
+    /* Permite que as palavras quebrem para a próxima linha */
+}
+
+/* Define os estilos para a seção de conteúdo */
+.content {
+    width: 100%;
+    /* Define a largura para 100% */
+    text-align: center;
+    /* Alinha o texto ao centro */
+    font-family: 'Inter', sans-serif;
+    /* Define a família da fonte */
+    font-size: 13px;
+    /* Define o tamanho da fonte */
+    font-weight: 400;
+    /* Define o peso da fonte */
+    line-height: 24px;
+    /* Define a altura da linha */
+    margin-top: 20px;
+    /* Adiciona margem acima do conteúdo */
+    border-top: 1px solid #333;
+    /* Adiciona uma borda superior */
+    padding: 5px 0;
+    /* Adiciona preenchimento */
+    color: #FFFFFF;
+    /* Define a cor do texto */
+    order: 1;
+    /* Garante que este item esteja na última posição */
+}

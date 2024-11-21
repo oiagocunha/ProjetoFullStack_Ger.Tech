@@ -1,0 +1,136 @@
+.card-carrinho {
+  width: 100%;
+  max-width: 350px;  /* Adicionando limite de largura */
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  margin: 3% auto;  /* Centraliza o card */
+}
+
+.titulo {
+  text-align: start;
+  margin-bottom: 16px;
+}
+
+.produtos {
+  margin-bottom: 16px;
+  max-height: 300px; /* Limita a altura para não ocupar muito espaço */
+  overflow-y: auto; /* Permite rolagem se houver muitos produtos */
+}
+
+.produto {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 8px 0;
+  margin-bottom: 8px;
+}
+
+.produto img {
+  width: 50px; /* Define o tamanho da imagem */
+  height: 50px;
+  object-fit: cover;  /* Garante que a imagem tenha o formato correto */
+  border-radius: 4px;
+  margin-right: 30px;
+  background-color: #7f7f7f;
+}
+
+.produto p {
+  flex: 1;
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.valor-total {
+  text-align: center;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: row;
+}
+
+.valor-total h3 {
+  margin: 0;
+}
+
+.valor-total .total {
+  font-size: 18px;
+  color: #000000;
+  margin-left: 5%;
+}
+
+.valor-total .calculo {
+  font-size: 18px;
+  color: #e23873;
+  margin-left: 40%;
+}
+
+.botoes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.esvaziar {
+  padding: 8px 16px;
+  background-color: transparent;
+  color: #7a7a7a;
+  text-decoration: underline;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.vizualizar {
+  padding: 8px 16px;
+  background-color: #e23873;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.esvaziar:hover {
+  background-color: #f4f4f4;
+}
+
+.vizualizar:hover {
+  background-color: #d01a56;
+}
+
+.botoes button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+@media (max-width: 400px) {
+  .card-carrinho {
+    padding: 12px;
+  }
+
+  .produto img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .produto p {
+    font-size: 12px;
+  }
+
+  .valor-total h3 {
+    font-size: 16px;
+  }
+
+  .botoes {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .botoes button {
+    width: 100%;
+  }
+}
