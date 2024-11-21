@@ -50,7 +50,7 @@ nav a::before {
     transition: all 1s ease;
 }
 
-nav a:hover::before {
+Header nav a:hover::before {
     width: 100%;
     background-color: #e23873;
 }

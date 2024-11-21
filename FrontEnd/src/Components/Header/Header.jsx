@@ -13,7 +13,7 @@ function Header() {
     };
 
     return (
-       <header className=" py-3">
+       <header className="py-3">
         <nav className="container d-flex justify-content-between align-items-center" style={{ marginTop: '25px' }}>
                 <img src={logo} alt="Logo"/>
                 <SearchBar/>
