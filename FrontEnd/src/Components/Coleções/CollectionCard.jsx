@@ -23,33 +23,39 @@ function CollectionCard() {
   ];
 
   return (
-    <div className="rootCards">
-      <h2 className="titleCollection">Coleções em destaque</h2>
-      
-      <div className="row">
-        {collections.map((item, index) => (
-          <div key={index} className="col-md-4 mb-4">
-            <div className="card collection-card">
-              
+    <div className="colections">
+      <div className="rootCards">
+        <div className="titleCollection">
+          <h2>Coleções em destaque</h2>
+        </div>
 
-              <div>
-                <div>
-                  <span className="badge discount">30% OFF</span>
-                  <button className="btn">Comprar</button>
+
+        <div className="row">
+          {collections.map((item, index) => (
+            <div key={index} className="col-md-4 mb-4">
+              <div className="card collection-card">
+
+
+                <div className="collectionCard">
+                  <div className="discountcard">
+                    <span className="badge-discount">30% OFF</span>
+                    <img
+                      src={item.imgSrc}
+                      alt={item.title}
+                      className="card-img"
+                    />
+                    <button className="btnCard">Comprar</button>
+                  </div>
+
                 </div>
 
-                <img
-                  src={item.imgSrc}
-                  alt={item.title}
-                  className="card-img"
-                />
               </div>
-              
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
+
   );
 }
 
