@@ -11,7 +11,7 @@ function HomePage() {
       <Header />
       <Carrossel />
       <CollectionCard />
-      <ProductList />
+      <ProductList size={8} />
       <Footer />
     </>
   );
