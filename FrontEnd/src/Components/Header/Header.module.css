@@ -50,7 +50,7 @@ nav a::before {
     transition: all 1s ease;
 }
 
-Header nav a:hover::before {
+.Link a:hover::before {
     width: 100%;
     background-color: #e23873;
 }
@@ -87,6 +87,7 @@ nav .buttonEntrar {
 nav .buttonEntrar:hover {
     background-color: var(--cor-hover-entrar);
     border-color: var(--cor-hover-entrar);
+    color: #ffffff;
 }
 
 /* Estilos para a logo */
