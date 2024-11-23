@@ -1,0 +1,36 @@
+.container{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 70px;
+    background-color: #ffffff;
+    max-width: 300px; 
+
+}
+
+.filtro h2{
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #000000f4;
+
+}
+
+.categoria{
+    margin-bottom: 20px;
+}
+.categoria label{
+    position: relative;
+    cursor: pointer;
+    padding-left: 30px;
+    user-select: none; 
+    margin: 10px 0; 
+}
+
+.categoria:checked + .categoria label::after{
+    content: '✔';
+    position: absolute;
+    left: 5px; 
+    top: 50%;
+    color: white; 
+    font-size: 16px; 
+}
+

@@ -1,0 +1,13 @@
+.containerAll{
+    display: flex;
+    flex-direction: row;  
+    align-items: flex-start;
+    justify-content: end;
+      
+  } 
+  
+  .subContainer {
+      display: flex;
+      align-items: self-end;
+      flex-direction: column;
+  }

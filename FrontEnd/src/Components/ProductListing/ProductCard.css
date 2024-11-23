@@ -1,0 +1,82 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 10px;
+    
+  }
+  
+  /* Estilo principal do card */
+.product-card {
+  position: relative;
+  width: 300px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Badge de desconto */
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #d9ffb3;
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+/* Imagem do produto */
+.product-image {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+/* Informações do produto */
+.product-info {
+  margin-top: 10px;
+}
+
+.product-category {
+  display: block;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product-pricing {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.original-price {
+  font-size: 16px;
+  color: #888;
+  text-decoration: line-through;
+}
+
+.discount-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff5733;
+}

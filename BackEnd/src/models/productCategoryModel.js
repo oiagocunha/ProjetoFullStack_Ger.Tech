@@ -24,4 +24,7 @@ const ProductCategoryModel = connection.define('productCategory', {
     timestamps: false,
 });
 
+ProductModel.belongsToMany(CategoryModel, { through: ProductCategoryModel, foreignKey: 'product_id' });
+CategoryModel.belongsToMany(ProductModel, { through: ProductCategoryModel, foreignKey: 'category_id' });
+
 module.exports = ProductCategoryModel;

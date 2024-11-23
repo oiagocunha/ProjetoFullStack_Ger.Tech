@@ -1,0 +1,86 @@
+.navegacao {
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: row; /* Exibir as colunas lado a lado */
+    align-items: flex-start; /* Alinha os itens ao topo */
+    justify-content: space-around; 
+    background-color: #1D1D1D; 
+    color: #FFFFFF; 
+    padding: 40px 5px; 
+    gap: 40px; 
+    flex-wrap: wrap; /* Permitir que os itens sejam movidos para a próxima linha */
+}
+
+img {
+    width: 255px;
+    height: 44px;
+    opacity: 1; 
+}
+
+.p {
+    max-width: 260px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px; 
+    font-weight: 400;
+    line-height: 26px;
+    text-align: left;
+}
+
+.RedesSociais {
+    display: flex;
+    gap: 25px; 
+    align-items: center;
+    
+}
+
+.RedesSociais img {
+    width: 20px;
+    height: 20px;
+    display: flex;
+
+}
+
+.Informacao, .Categorias, .Contato {
+    display: flex; 
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+    align-items: baseline;   /*para deixar os textos alinhados um em baixo do outro*/
+}
+
+.titulo {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.78px;
+    margin-bottom: 10px; 
+}
+
+.Informacao a, .Categorias a, .Contato a {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.adress{
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: left; /* alinha à esquerda */
+    word-wrap: break-word;
+}
+.content {
+    width: 100%; /* Ocupa toda a largura */
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: 20px;
+    border-top: 1px solid #333;
+    padding: 5px 0;
+    color: #FFFFFF;
+    order: 1; /* Garante que este item fique na última posição */
+    width: 1240px;
+}

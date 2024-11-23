@@ -14,10 +14,7 @@ const ProductImageModel = connection.define('productImage', {
             model: ProductModel,
             key: 'id',
         },
-    },
-    enabled: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: false,
+        allowNull: false,
     },
     path: {
         type: DataTypes.STRING,
@@ -26,5 +23,8 @@ const ProductImageModel = connection.define('productImage', {
 }, {
     timestamps: true,
 });
+
+ProductModel.hasMany(ProductImageModel, { foreignKey: 'product_id' });
+ProductImageModel.belongsTo(ProductModel, { foreignKey: 'product_id' });
 
 module.exports = ProductImageModel;
