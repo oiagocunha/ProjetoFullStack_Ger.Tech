@@ -1,0 +1,91 @@
+.carousel-content {
+    display: flex; /* Define um container flexível */
+    align-items: center; /* Alinha os itens no centro verticalmente */
+    justify-content: space-between; /* Distribui os itens com espaço entre eles */
+    flex-direction: row-reverse; /* Inverte a direção dos itens no eixo horizontal */
+    padding: 1%; /* Adiciona um espaçamento interno de 1% */
+    height: 600px; /* Define a altura do container como 681px */
+    background-color: #f5f5f5; /* Define a cor de fundo como um cinza claro */
+    width: 100%; /* Define a largura do container como 100dvw (dynamic view widht) do elemento pai */
+}
+
+.carousel-text {
+    text-align: left; /* Alinha o texto à esquerda */
+    width: 40dvw; /* Define a largura do texto como 30dvw */
+    margin-left: 10%; /* Adiciona uma margem à esquerda de 10% */
+}
+
+.carousel-text h6 {
+    font-size: 1rem; /* Define o tamanho da fonte como 1rem */
+    font-family: 'Roboto', sans-serif light; /* Define a família da fonte como 'Roboto' com fallback para sans-serif */
+}
+
+.carousel-text h2 {
+    font-size: 56px; /* Define o tamanho da fonte como 56px */
+    color: #1f1f1f; /* Define a cor do texto como um cinza escuro */
+    font-weight: bold; /* Define o peso da fonte como negrito */
+    font-family: sans-serif; /* Define a família da fonte como sans-serif */
+}
+
+.carousel-text p {
+    font-size: 14px; /* Define o tamanho da fonte como 14px */
+    color: #626262; /* Define a cor do texto como um cinza médio */
+    margin: 20px 0; /* Adiciona uma margem vertical de 20px */
+    font-family: 'Roboto Regular', sans-serif; /* Define a família da fonte como 'Roboto Regular' com fallback para sans-serif */
+}
+
+.btn {
+    background-color: #c92071; /* Define a cor de fundo do botão como um rosa escuro */
+    border-color: #c92071; /* Define a cor da borda do botão como um rosa escuro */
+    width: 150px; /* Define a largura do botão como 150px */
+}
+
+.carousel-image {
+    display: flex; /* Define um container flexível */
+    width: 60dvw; /* Define a largura da imagem como 60dvw */
+    height: 500px; /* Define a altura da imagem como auto */
+}
+
+.Ornament {
+    display: flex; /* Define um container flexível */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    height: 140px; /* Define a altura do ornamento como 140px */
+    width: 140px; /* Define a largura do ornamento como 140px */
+    margin-top: 0px;
+    margin-right: 100px;
+}
+
+.Tênis {
+    display: flex; /* Define um container flexível */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    width: 600px; /* Define a largura da imagem como 700px */
+    height: 300px; /* Define a altura da imagem como 300px */
+    margin-top: 90px; /* Adiciona uma margem à direita de 130px */
+    margin-right: 40px; /* Adiciona uma margem à direita de 130px */
+    transform: rotate(-20deg); /* Rotaciona a imagem em -19.34 graus */
+}
+
+
+
+.carousel-indicators li {
+    background-color: #ffffff; /* Define a cor de fundo dos indicadores como branco */
+}
+
+.carousel-indicators [data-bs-target] {
+    box-sizing: content-box; /* Define o box-sizing como content-box */
+    flex: 0 1 auto; /* Define o comportamento flexível dos itens */
+    width: 10px; /* Define a largura dos indicadores como 10px */
+    height: 10px; /* Define a altura dos indicadores como 10px */
+    padding: 0; /* Remove qualquer padding */
+    margin-right: 10px; /* Adiciona uma margem à direita de 10px */
+    margin-left: 3px; /* Adiciona uma margem à esquerda de 3px */
+    cursor: pointer; /* Define o cursor como pointer ao passar sobre os indicadores */
+    background-color: #cccccc; /* Define a cor de fundo dos indicadores como cinza claro */
+    opacity: 100%; /* Define a opacidade como 100% */
+    border-radius: 50%; /* Define bordas arredondadas para os indicadores */
+    transition: background-color 0.6s ease; /* Adiciona uma transição suave na cor de fundo */
+}
+
+.carousel-indicators .active {
+    background-color: #c92071; /* Define a cor de fundo do indicador ativo como um rosa escuro */
+}
